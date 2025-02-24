@@ -402,7 +402,7 @@ run-installer() {
     curl -fsSL https://raw.githubusercontent.com/faganzeynalli/mo/main/azuracast.sample.env -o azuracast.env
   fi
   if [[ ! -f docker-compose.yml ]]; then
-    curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/$AZURACAST_RELEASE_BRANCH/docker-compose.sample.yml -o docker-compose.yml
+    curl -fsSL https://raw.githubusercontent.com/faganzeynalli/mo/main/docker-compose.sample.yml -o docker-compose.yml
   fi
 
   touch docker-compose.new.yml

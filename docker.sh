@@ -396,7 +396,7 @@ run-installer() {
   AZURACAST_RELEASE_BRANCH=$(get-release-branch-name)
 
   if [[ ! -f .env ]]; then
-    curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/$AZURACAST_RELEASE_BRANCH/sample.env -o .env
+    curl -fsSL https://raw.githubusercontent.com//faganzeynalli/mo/main/sample.env -o .env
   fi
   if [[ ! -f azuracast.env ]]; then
     curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/$AZURACAST_RELEASE_BRANCH/azuracast.sample.env -o azuracast.env

@@ -414,7 +414,7 @@ run-installer() {
     fi
   fi
 
-  curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/$AZURACAST_RELEASE_BRANCH/docker-compose.installer.yml -o docker-compose.installer.yml
+  curl -fsSL https://raw.githubusercontent.com/AzuraCast/faganzeynalli/mo/main/docker-compose.installer.yml -o docker-compose.installer.yml
 
   dc -p azuracast_installer -f docker-compose.installer.yml pull
   dc -p azuracast_installer -f docker-compose.installer.yml run --rm installer install "$@"

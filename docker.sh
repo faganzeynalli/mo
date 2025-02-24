@@ -396,13 +396,13 @@ run-installer() {
   AZURACAST_RELEASE_BRANCH=$(get-release-branch-name)
 
   if [[ ! -f .env ]]; then
-    curl -fsSL https://raw.githubusercontent.com/faganzeynalli/mo/main/sample.env -o .env
+    curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/$AZURACAST_RELEASE_BRANCH/sample.env -o .env
   fi
   if [[ ! -f azuracast.env ]]; then
-    curl -fsSL https://raw.githubusercontent.com/faganzeynalli/mo/main/azuracast.sample.env -o azuracast.env
+    curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/$AZURACAST_RELEASE_BRANCH/azuracast.sample.env -o azuracast.env
   fi
   if [[ ! -f docker-compose.yml ]]; then
-    curl -fsSL https://raw.githubusercontent.com/faganzeynalli/mo/main/docker-compose.sample.yml -o docker-compose.yml
+    curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/$AZURACAST_RELEASE_BRANCH/docker-compose.sample.yml -o docker-compose.yml
   fi
 
   touch docker-compose.new.yml
@@ -414,7 +414,7 @@ run-installer() {
     fi
   fi
 
-  curl -fsSL https://raw.githubusercontent.com/faganzeynalli/mo/main/docker-compose.installer.yml -o docker-compose.installer.yml
+  curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/$AZURACAST_RELEASE_BRANCH/docker-compose.installer.yml -o docker-compose.installer.yml
 
   dc -p azuracast_installer -f docker-compose.installer.yml pull
   dc -p azuracast_installer -f docker-compose.installer.yml run --rm installer install "$@"

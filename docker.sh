@@ -392,9 +392,6 @@ install-docker-compose() {
 }
 
 run-installer() {
-  local AZURACAST_RELEASE_BRANCH
-  AZURACAST_RELEASE_BRANCH=$(get-release-branch-name)
-
   if [[ ! -f .env ]]; then
     curl -fsSL https://raw.githubusercontent.com/faganzeynalli/mo/main/sample.env -o .env
   fi
@@ -556,9 +553,6 @@ update() {
   if ask "Are you ready to continue with the update?" Y; then
 
     # Check for a new Docker Utility Script.
-    local AZURACAST_RELEASE_BRANCH
-    AZURACAST_RELEASE_BRANCH=$(get-release-branch-name)
-
     curl -fsSL https://raw.githubusercontent.com/faganzeynalli/mo/main/docker.sh -o docker.new.sh
 
     local UTILITY_FILES_MATCH
@@ -644,9 +638,6 @@ update() {
 # Usage: ./docker.sh update-self
 #
 update-self() {
-  local AZURACAST_RELEASE_BRANCH
-  AZURACAST_RELEASE_BRANCH=$(get-release-branch-name)
-
   curl -H 'Cache-Control: no-cache, no-store' -fsSL \
     https://raw.githubusercontent.com/faganzeynalli/mo/main/docker.sh?$(date +%s) \
     -o docker.sh
